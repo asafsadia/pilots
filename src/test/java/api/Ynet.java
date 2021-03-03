@@ -26,7 +26,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class Ynet extends BaseTest {
 
-	@Test(description = "GET YNET return 200", enabled = false)
+	@Test(description = "GET YNET return 200", enabled = true)
 	public void StatusCode200Ynet() throws InterruptedException {
 
 		{
@@ -36,7 +36,7 @@ public class Ynet extends BaseTest {
 		}
 	}
 
-	@Test(description = "GET does not return Forbiden", enabled = false)
+	@Test(description = "GET does not return Forbiden", enabled = false)// test
 	public void StatusCodeIsNot403() throws InterruptedException {
 
 		{
@@ -72,10 +72,10 @@ public class Ynet extends BaseTest {
 
 	}
 	
-	@Test(description = "GET ", enabled = true)
+	@Test(description = "GET ", enabled = false)
 	public void apiYesNo_03() throws InterruptedException {
 		{
-		when().get("https://yesno.wtf/api").then().body("answer", equalTo("yes"));
+		when().get("https://yesno.wtf/api").then().body("answer", equalTo("no"));
 		}//import static org.hamcrest.CoreMatchers.*;
 	}
 	
