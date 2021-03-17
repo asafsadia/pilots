@@ -50,11 +50,8 @@ public class WelcomePage extends BasePage{
 	@Story("get the color from element return RGB")
 	public void getLogoColor() {
 		WebElement eleSearch = driver.findElement(By.cssSelector(".elementor-element-3440071e.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default > div > div > div > div > div > div > div > h2"));
-
 		String rgbFormat = eleSearch.getCssValue("color");
-
 		System.out.println(rgbFormat);     //In RGB Format the value will be print => rgba(254, 189, 105, 1)
-
 		String hexcolor = Color.fromString(rgbFormat).asHex(); //converted Into HexFormat
 		System.out.println(hexcolor);// Output of Hex code will be  => #164b80
 	}

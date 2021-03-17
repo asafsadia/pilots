@@ -35,8 +35,8 @@ public class OrderFlightTest extends BaseTest{
 	@Step("selected date")
 	@Test(priority = 3)
 	public void selectDate(){
-		FirstFlightAndF16Page ffp = new FirstFlightAndF16Page(driver);
-		ffp.chooseDate("June", "2021", "6");
+//		FirstFlightAndF16Page ffp = new FirstFlightAndF16Page(driver);
+//		ffp.chooseDate("June", "2021", "6");
 	}
 
 }
