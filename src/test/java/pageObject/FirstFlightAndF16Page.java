@@ -35,14 +35,14 @@ public class FirstFlightAndF16Page extends BasePage{
 //            }
         }
 
-        public void chooseDay(String day){
-            for(WebElement el :day){
-            if(el.getText().equals(day)){
-               click(el);
-               break;
-            }
-        }
-     }
+//        public void chooseDay(String day){
+//            for(WebElement el :day){
+//            if(el.getText().equals(day)){
+//               click(el);
+//               break;
+//            }
+//        }
+//     }
 
 
     public String getMonth(){

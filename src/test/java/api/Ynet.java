@@ -1,42 +1,78 @@
 package api;
 
 import static io.restassured.RestAssured.*; // static 
-import static org.testng.Assert.assertEquals;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.Driver;
-import java.util.List;
-import java.util.Optional;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.DriverManagerType;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
-import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import static org.hamcrest.CoreMatchers.*;
 
 public class Ynet extends BaseTest {
-
+	
+	@Story("check status code")
 	@Test(description = "GET YNET return 200", enabled = true)
-	public void StatusCode200Ynet() throws InterruptedException {
+	public void StatusCode200makofood() throws InterruptedException {
+
+		String body = when()
+				.get("https://www.mako.co.il/food?partner=NavBar")
+				.asString();
+		System.out.println(body);
+		
+	}
+	
+	@Story("check status code")
+	@Test(description = "GET YNET return 200", enabled = false)
+	public void StatusCode200mako() throws InterruptedException {
 
 		{
-			given().log().all().when().get("home/0,7340,L-8,00.html").then().statusCode(200);
-			given().log().ifValidationFails().when().get("home/0,7340,L-8,00.html").then().statusCode(200);
+			given()
+			.log()
+			.all()
+			.when()
+			.get("https://www.mako.co.il/food?partner=NavBar")
+			.then().body("content", equalTo("אוכל טוב"));
+			
 
 		}
 	}
 
-	@Test(description = "GET does not return Forbiden", enabled = false)// test
+	@Story("check status code")
+	@Test(description = "GET YNET return 200", enabled = false)
+	public void StatusCode200Ynet() throws InterruptedException {
+
+		{
+			given()
+			.log()
+			.all()
+			.when()
+			.get("home/0,7340,L-8,00.html")
+			.then()
+			.statusCode(200);
+
+		}
+	}
+	
+	@Story("check if Validation Fails get log in the console /200 fassed no log /400 fails send log")
+	@Test(description = "GET YNET return 200", enabled = false)
+	public void StatusCode200Yneta() throws InterruptedException {
+
+		{
+			given()
+			.log()
+			.ifValidationFails()
+			.when()
+			.get("home/0,7340,L-8,00.html")
+			.then()
+			.statusCode(200);
+
+		}
+	}
+
+	@Test(description = "GET does not return Forbiden", enabled = false)
 	public void StatusCodeIsNot403() throws InterruptedException {
 
 		{
