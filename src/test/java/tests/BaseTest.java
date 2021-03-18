@@ -70,7 +70,6 @@ public class BaseTest {
 			try {
 				FileUtils.copyFile(srcFile, new File("./ScreenShots/" + result.getName() + ".jpg"));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			// result.getname() method will give you current test case name.
