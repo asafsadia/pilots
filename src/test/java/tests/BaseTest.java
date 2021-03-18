@@ -54,10 +54,10 @@ public class BaseTest {
 		AllureAttachment.attachURL("https://www.pilots.co.il/");
 	}
 
-//	@AfterClass(description = "closing driver")
-//	public void tearDone() {
-//		driver.quit();
-//	}
+	@AfterClass(description = "closing driver")
+	public void tearDone() {
+		driver.quit();
+	}
 
 	// This method will run after watch test, it will take screen shot only for
 	// tests that failed
