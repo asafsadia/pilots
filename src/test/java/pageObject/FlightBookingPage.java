@@ -12,6 +12,8 @@ public class FlightBookingPage extends BasePage{
     private WebElement firstFlightAndF16;
     @FindBy(css = ".elementor-widget-heading > div > h1")
     private WebElement title;
+    @FindBy(css = "#post-3246 > div > div > section > div > div > div > div > div > div.elementor-element.elementor-element-d50c277.elementor-align-center.type1.elementor-widget.elementor-widget-button > div > div > a > span > span.elementor-button-text")
+    private WebElement firstFBtn;
 
     public FlightBookingPage(WebDriver driver) {
         super(driver);
@@ -23,9 +25,13 @@ public class FlightBookingPage extends BasePage{
 
     @Step("select first visit")
     public void choosFirstVisit(){
-        click(firstVisit);
+//        click(firstVisit);
         click(firstFlightAndF16);
+    }
 
+    @Step("click on first flight btn")
+    public void firstFlightBtn(){
+        click(firstFBtn);
     }
 
 }

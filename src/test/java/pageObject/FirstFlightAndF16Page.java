@@ -27,12 +27,12 @@ public class FirstFlightAndF16Page extends BasePage{
         while ( (! month.equals(eMonth)) || (! year.equals(eYear))){
             click(nextBtn);
         }
-//        List<WebElement> day = driver.findElements(By.cssSelector(".ui-state-default"));
-//        for(WebElement el :day){
-//            if(el.getText().equals(day)){
-//               click(el);
-//               break;
-//            }
+        List<WebElement> day1 = driver.findElements(By.cssSelector(".ui-state-default"));
+        for(WebElement el :day1){
+            if(el.getText().equals(day)){
+               click(el);
+               break;
+            }
         }
 
 //        public void chooseDay(String day){
@@ -41,8 +41,8 @@ public class FirstFlightAndF16Page extends BasePage{
 //               click(el);
 //               break;
 //            }
-//        }
-//     }
+//       }
+     }
 
 
     public String getMonth(){
